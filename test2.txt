@@ -1,1 +1,0 @@
-test string to learn how to pull requset from terminal

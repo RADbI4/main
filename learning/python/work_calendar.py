@@ -66,7 +66,7 @@ while z != 13:
     elif last_day_of_month(month_weeks) == 30 and work_days[-1] == 28:
         i = 1
         j = i + 1
-    else:986
+    else:
         print('Невозможно, пересмотри программу или входные данные')
     z += 1
     work_days.clear()

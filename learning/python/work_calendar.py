@@ -28,49 +28,8 @@ def last_day_of_month(month):
         return 30
 
 
-<<<<<<< HEAD
-z = 7  # месяц, с которого начинается отчёт
-month_weeks = calendar.monthcalendar(2022, z)
-i = 5 # первое рабочее число
-j = i +1  # второе рабочее число
-work_days = []
-month_name = list(calendar.month_name)
-# print(month_name[z])
-while z != 13:
-    month_weeks = calendar.monthcalendar(2022, z)
-    for week in month_weeks:
-        for day in week:
-            if day == i:
-                if last_day_of_month(month_weeks) == 30 and i == 31:
-                    break
-                else:
-                    work_days.append(i)
-                i += 4
-                if j != 32:
-                    work_days.append(j)
-                    j += 4
-    print(f'Рабочие числа в {month_name[z]}')
-    print(work_days)
-    if last_day_of_month(month_weeks) == 31 and work_days[-1] == 31:
-        i = 3
-        j = i + 1
-    elif last_day_of_month(month_weeks) == 31 and work_days[-1] == 30:
-        i = 3
-        j = i + 1
-    elif last_day_of_month(month_weeks) == 31 and work_days[-1] == 29:
-        i = 1
-        j = i + 1
-    elif last_day_of_month(month_weeks) == 30 and work_days[-1] == 29:
-        i = 2
-        j = i + 1
-    elif last_day_of_month(month_weeks) == 30 and work_days[-1] == 28:
-        i = 1
-        j = i + 1
-    else:
-        print('Невозможно, пересмотри программу или входные данные')
-    z += 1
-    work_days.clear()
-=======
+
+
 def work_calendar(z: int, year: int, i: int):
     """
     Функция возвращает строку с рабочими днями и названием месяца
@@ -104,12 +63,15 @@ def work_calendar(z: int, year: int, i: int):
             i = 3
             j = i + 1
         elif last_day_of_month(month_weeks) == 31 and work_days[-1] == 30:
-            i = 3
+            i = 2
             j = i + 1
         elif last_day_of_month(month_weeks) == 31 and work_days[-1] == 29:
             i = 1
             j = i + 1
         elif last_day_of_month(month_weeks) == 30 and work_days[-1] == 29:
+            i = 2
+            j = i + 1
+        elif last_day_of_month(month_weeks) == 30 and work_days[-1] == 31:
             i = 2
             j = i + 1
         elif last_day_of_month(month_weeks) == 30 and work_days[-1] == 28:
@@ -119,8 +81,8 @@ def work_calendar(z: int, year: int, i: int):
             print('Невозможно, пересмотри программу или входные данные')
         z += 1
         work_days.clear()
->>>>>>> 27b692fc5cfd5447165b927e994c6c847fc87c6a
+
 
 
 if __name__ == "__main__":
-    work_calendar(7, 2022, 9)
+    work_calendar(z=7, year=2022, i=21)
